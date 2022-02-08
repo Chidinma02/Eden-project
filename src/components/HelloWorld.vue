@@ -30,11 +30,14 @@
               :key="post.id"
               class="col-sm-12 col-md-3 col-lg-4"
             >
-              <!-- <router-link -->
-              <!-- :to="'/details/' + post.id.substring(7, post.id.length)" -->
-              <!-- > -->
-              <!-- <img v-bind:src="post" class="img-fluid img-cls mb-5" /> -->
-              <!-- </router-link> -->
+              <router-link
+                :to="{
+                  name: 'details',
+                  params: { id: post.id, breed: post.breed },
+                }"
+              >
+                <img v-bind:src="post.link" class="img-fluid img-cls mb-5" />
+              </router-link>
             </div>
           </div>
           <div v-else>
@@ -92,5 +95,6 @@ export default {
 
 .img-cls {
   height: 75vh;
+  border-radius: 10px;
 }
 </style>
