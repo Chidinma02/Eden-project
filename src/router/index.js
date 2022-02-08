@@ -1,7 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-
+import Search from "../components/Search.vue";
+import details from "../components/Details.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -18,6 +19,16 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+  {
+    path: "/search",
+    name: "Search",
+    component: Search,
+  },
+  {
+    path: "/details/:breed/:id/",
+    name: "details",
+    component: details,
   },
 ];
 
